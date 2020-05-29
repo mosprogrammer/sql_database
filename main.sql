@@ -20,3 +20,5 @@ ADD username VARCHAR(50) UNIQUE NOT NULL;
 --
 SHOW COLUMNS
 FROM users;
+--
+-- ทดสอบ
