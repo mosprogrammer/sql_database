@@ -3,7 +3,7 @@ USE eba_database;
 -- สร้าง table users
 CREATE TABLE users (
     id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    emall varchar(50) NOT NULL,
+    email varchar(50) NOT NULL,
     password varchar(255) NOT NULL,
     firstname varchar(30) NOT NULL,
     lastname varchar(30) NOT NULL,
@@ -15,7 +15,9 @@ CREATE TABLE users (
     updateAt datetime
 );
 
-
+-- กำหนดให้ค่าใน column email ห้ามซ้ำกัน
+-- ALTER TABLE users
+-- MODIFY email varchar(50) UNIQUE NOT NULL;
 
 -- แสดง column ทั้งหมดใน users
 SHOW COLUMNS

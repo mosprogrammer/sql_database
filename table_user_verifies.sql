@@ -12,11 +12,9 @@ CREATE TABLE user_verifies (
 );
 
 
--- ปรับ column ให้เป็น NOT NULL
+-- กำหนดให้ค่าใน column  ห้ามซ้ำกัน และปรับ column token
 -- ALTER TABLE user_verifies
--- MODIFY userID integer NOT NULL;
-
-
+-- MODIFY token varchar(100) UNIQUE NOT NULL;
 
 
 -- แสดง column ทั้งหมดใน user_verifies
