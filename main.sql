@@ -8,7 +8,7 @@ CREATE TABLE Users(
     Firstname varchar(255), 
     Lastname varchar(255), 
     Profile_Image varchar(255),
-    Archivement varchar(255), 
+    Archivement varchar(255),
     Address_id integer,
     PRIMARY KEY (user_id)
 );
