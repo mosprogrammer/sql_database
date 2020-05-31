@@ -9,7 +9,7 @@ CREATE TABLE Users(
     Lastname varchar(255), 
     Profile_Image varchar(255),
     Archivement varchar(255),
-    Address_id integer,
+    Address_id integer(10),
     PRIMARY KEY (user_id)
 );
 -- สร้างตารางเก็บข้อมูลที่อยู่
@@ -25,15 +25,15 @@ CREATE TABLE Verify(
     verify_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT , 
     Token_Expire integer,
     Status varchar(50),
-    Users_id integer ,
+    Users_id integer(10),
     PRIMARY KEY (verify_id),
     FOREIGN KEY (Users_id) REFERENCES Users(user_id) 
 );
 -- สร้างตารางเก็บข้อมูลผู้ติดตาม
 CREATE TABLE Follow(
     follow_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT , 
-    Follower_id integer, 
-    Following_id integer ,
+    Follower_id integer(10), 
+    Following_id integer(10),
     PRIMARY KEY (follow_id),
     FOREIGN KEY (Follower_id) REFERENCES Users(user_id) ,
     FOREIGN KEY (Following_id) REFERENCES Users(user_id) 
@@ -41,7 +41,7 @@ CREATE TABLE Follow(
 -- สร้างตารางเก็บข้อมูลโพสต์
 CREATE TABLE Posts(
     post_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT , 
-    Users_id integer, 
+    Users_id integer(10), 
     Text_detail text, 
     Date_Time DateTime,
     PRIMARY KEY (post_id),
@@ -50,8 +50,8 @@ CREATE TABLE Posts(
 -- สร้างตารางเก็บข้อมูลหน้าแคป
 CREATE TABLE Claps(
     claps_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT ,
-    Posts_di integer,
-    Users_id integer ,
+    Posts_di integer(10),
+    Users_id integer(10),
     PRIMARY KEY (claps_id),
     FOREIGN KEY (Posts_di) REFERENCES Posts(post_id) ,
     FOREIGN KEY (Users_id) REFERENCES Users(user_id) 
@@ -61,8 +61,8 @@ CREATE TABLE Comment(
     comment_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT , 
     Text text,
     Date_Time DateTime, 
-    Posts_di integer, 
-    Users_id integer ,
+    Posts_di integer(10), 
+    Users_id integer(10),
     PRIMARY KEY (id),
     FOREIGN KEY (Posts_di) REFERENCES Posts(post_id) ,
     FOREIGN KEY (Users_id) REFERENCES Users(user_id) 
@@ -70,8 +70,8 @@ CREATE TABLE Comment(
 -- สร้างตารางเก็บข้อมูลหน้าฟีด
 CREATE TABLE Feeds(
     feeds_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT , 
-    Posts_di integer,
-    Users_id integer ,
+    Posts_di integer(10),
+    Users_id integer(10),
     PRIMARY KEY (id),
     FOREIGN KEY (Posts_di) REFERENCES Posts(post_id) ,
     FOREIGN KEY (Users_id) REFERENCES Users(user_id) 
@@ -79,9 +79,9 @@ CREATE TABLE Feeds(
 -- สร้างตารางเก็บข้อมูลแชร์โพสต์
 CREATE TABLE Share_Posts(
     share_Posts_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT , 
-    Posts_di integer, 
-    Users_id integer, 
-    Feeds_id integer, 
+    Posts_di integer(10), 
+    Users_id integer(10), 
+    Feeds_id integer(10), 
     Share_Time DateTime,
     PRIMARY KEY (share_Posts_id),
     FOREIGN KEY (Posts_di) REFERENCES Posts(post_id) ,
@@ -90,8 +90,8 @@ CREATE TABLE Share_Posts(
 -- สร้างตารางเก็บข้อมูล
 CREATE TABLE Hides (
     hides_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT , 
-    Users_id integer, 
-    Posts_di integer,
+    Users_id integer(10), 
+    Posts_di integer(10),
     PRIMARY KEY (id),
     FOREIGN KEY (Users_id) REFERENCES Users(user_id) ,
     FOREIGN KEY (Posts_di) REFERENCES Posts(post_id) 
