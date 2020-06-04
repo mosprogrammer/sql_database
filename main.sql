@@ -42,7 +42,6 @@ CREATE TABLE follows (
 -- สร้าง table post
 -- กำหนด postId เป็น PRIMARY KEY และ AUTO_INCREMENT ให้ postId สร้างอัตโนมัติ
 -- กำหนด userId เป็น FOREIGN KEY ของ usersId ในตาราง users
--- มีการแสดงเวลาเพิ่มลบแก้ไข หาก deletedAt ไม่ใช่ null จะเป็นการลบข้อมูล
 CREATE TABLE posts (
   postId INTEGER NOT NULL AUTO_INCREMENT,
   message VARCHAR(255),
