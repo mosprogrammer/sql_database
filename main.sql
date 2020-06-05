@@ -1,7 +1,7 @@
 -- สร้าง Database
 -- CREATE DATABASE testSql;
 -- เรียกใช้งาน database testSql
-USE testSql;
+USE test;
 
 -- สร้าง table user
 -- CREATE TABLE users(
@@ -16,7 +16,7 @@ SHOW TABLES;
 -- เพิ่ม column id, email, firstname, lastname, created_at, updated_at ใน users
 --
 CREATE TABLE `users` (
-  `id` varchar(32) PRIMARY KEY UNIQUE NOT NULL,
+  `id` integer PRIMARY KEY UNIQUE NOT NULL,
   `email` varchar(50),
   `firstname` varchar(50),
   `lastname` varchar(50),
@@ -28,9 +28,9 @@ CREATE TABLE `users` (
 -- เพิ่ม column id, following, follower, created_at ใน follows
 --
 CREATE TABLE `follows` (
-  `id` varchar(32) PRIMARY KEY UNIQUE NOT NULL,
-  `following` array,
-  `follower` array,
+  `id` integer PRIMARY KEY UNIQUE NOT NULL,
+  `following` integer,
+  `user_id` integer,
   `created_at` datetime
 );
 
@@ -38,12 +38,10 @@ CREATE TABLE `follows` (
 -- เพิ่ม column id, message, user_id, deleted, like_total, comment_total, created_at, updated_at ใน posts
 --
 CREATE TABLE `posts` (
-  `id` varchar(32) PRIMARY KEY UNIQUE NOT NULL,
+  `id` integer PRIMARY KEY UNIQUE NOT NULL,
   `message` varchar(255),
-  `user_id` varchar(32),
+  `user_id` integer,
   `deleted` boolean,
-  `like_total` integer,
-  `comment_total` integer,
   `created_at` datetime,
   `updated_at` datetime
 );
@@ -52,34 +50,35 @@ CREATE TABLE `posts` (
 -- เพิ่ม column id, post_id, user_id ใน likes
 --
 CREATE TABLE `likes` (
-  `id` varchar(32) PRIMARY KEY UNIQUE NOT NULL,
-  `post_id` varchar(32),
-  `user_id` varchar(32)
+  `id` integer PRIMARY KEY UNIQUE NOT NULL,
+  `post_id` integer,
+  `user_id` integer
 );
 
 --
 -- เพิ่ม column id, post_id, user_id ใน comments
 --
 CREATE TABLE `comments` (
-  `id` varchar(32) PRIMARY KEY UNIQUE NOT NULL,
-  `post` varchar(32),
-  `user_id` varchar(32)
+  `id` integer PRIMARY KEY UNIQUE NOT NULL,
+  `message` integer,
+  `post_id` integer
+  `user_id` integer
 );
 
 --
 -- เพิ่ม column id, post_id, user_id ใน shares
 --
 CREATE TABLE `shares` (
-  `id` varchar(32) PRIMARY KEY UNIQUE NOT NULL,
-  `post_id` varchar(32),
-  `user_id` varchar(32)
+  `id` integer PRIMARY KEY UNIQUE NOT NULL,
+  `post_id` integer,
+  `user_id` integer
 );
 
 --
 -- เพิ่ม column id, post_id, user_id ใน post_hide
 --
 CREATE TABLE `post_hide` (
-  `id` varchar(32) PRIMARY KEY UNIQUE NOT NULL,
-  `post_id` varchar(32),
-  `user_id` varchar(32)
+  `id` integer PRIMARY KEY UNIQUE NOT NULL,
+  `post_id` integer,
+  `user_id` integer
 );
