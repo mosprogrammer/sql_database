@@ -64,7 +64,7 @@ VALUES (1, "Milica", "Olvia", "123456", "/user/profile.png"),
 
 -- แก้ไข
 UPDATE users
-SET password = "456789"
+SET `password` = "456789"
 WHERE id = 2;
 
 -- ลบ
