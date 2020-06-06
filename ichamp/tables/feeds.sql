@@ -5,7 +5,6 @@ CREATE TABLE `feeds` (
   `content` varchar(150),
   `create_date` datetime,
   `status` int(1) DEFAULT 1,
-  `share` int(1) DEFAULT 0,
   -- กำหนด primary key ให้กับ id
   PRIMARY KEY (id),
   -- กำหนด foreign key ให้ userId โดยอิงจาก users.id table
