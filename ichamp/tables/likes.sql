@@ -9,7 +9,7 @@ CREATE TABLE `likes` (
   -- กำหนด foreign key ให้ userId โดยอิงจาก users.id table
   FOREIGN KEY (`userId`) REFERENCES `users` (`id`),
   -- กำหนด foreign key ให้ feedId โดยอิงจาก feeds.id table
-  FOREIGN KEY (`feedId`) REFERENCES `feeds` (`id`)
+  FOREIGN KEY (`feedId`) REFERENCES `feeds` (`id`) ON DELETE CASCADE
 );
 
 -- เพิ่มข้อมูล
