@@ -4,6 +4,9 @@ CREATE DATABASE eba;
 USE eba;
 
 -- Count จำนวน Post ของ User
-SELECT COUNT(column_name)
-FROM table_name
-WHERE condition;
+SELECT COUNT(`id`)
+AS NumberOfFeeds
+FROM `feeds`
+WHERE `userId` = 20;
+
+-- Count จำนวน Comment ของ Post 
