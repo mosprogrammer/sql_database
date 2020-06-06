@@ -22,3 +22,8 @@ FROM `likes`
 WHERE `feedId` = 5;
 
 -- Count จำนวน Share ของ Post
+SELECT COUNT(`id`)
+AS NumberOfShares
+FROM `feed_shares`
+WHERE `feedId` = 5
+AND `userId`;
