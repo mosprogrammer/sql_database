@@ -15,3 +15,4 @@ AS NumberOfComments
 FROM `comments`
 WHERE `feedId` = 1;
 
+-- Count จำนวน Like ของ Post
