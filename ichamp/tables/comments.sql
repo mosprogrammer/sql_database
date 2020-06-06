@@ -1,6 +1,6 @@
 -- สร้าง comments table
 CREATE TABLE `comments` (
-  `id` int AUTO_INCREMENT,
+  `id` INT AUTO_INCREMENT NOT NULL,
   `create_date` datetime,
   `detail` varchar(150),
   `userId` int,

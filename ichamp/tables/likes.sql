@@ -1,11 +1,11 @@
 -- สร้าง claps table
 CREATE TABLE `likes` (
-  `id` int,
+  `id` int AUTO_INCREMENT NOT NULL,
   `create_date` datetime,
   `feedId` int,
   `userId` int,
   -- กำหนด primary key ให้กับ id
-  PRIMARY KEY (id),
+  PRIMARY KEY (`id`),
   -- กำหนด foreign key ให้ userId โดยอิงจาก users.id table
   FOREIGN KEY (`userId`) REFERENCES `users` (`id`),
   -- กำหนด foreign key ให้ feedId โดยอิงจาก feeds.id table

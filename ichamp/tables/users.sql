@@ -1,12 +1,12 @@
 -- สร้าง users table
 CREATE TABLE `users` (
-  `id` int AUTO_INCREMENT,
+  `id` int AUTO_INCREMENT NOT NULL,
   `first_name` varchar(100),
   `last_name` varchar(100),
   `password` int(12),
   `profile_image` varchar(255),
   -- กำหนด primary key ให้กับ id
-  PRIMARY KEY (id)
+  PRIMARY KEY (`id`)
 );
 
 -- เพิ่มข้อมูล

@@ -1,6 +1,6 @@
 -- สร้าง feeds table
 CREATE TABLE `feeds` (
-  `id` int AUTO_INCREMENT,
+  `id` int AUTO_INCREMENT NOT NULL,
   `userId` int,
   `content` varchar(150),
   `create_date` datetime,

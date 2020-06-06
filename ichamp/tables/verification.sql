@@ -1,11 +1,11 @@
 -- สร้าง verification table
 CREATE TABLE `verification` (
-  `id` int AUTO_INCREMENT,
+  `id` int AUTO_INCREMENT NOT NULL,
   `token` int,
   `userId` int,
   `token_expire` datetime,
   -- กำหนด primary key ให้กับ id
-  PRIMARY KEY (id),
+  PRIMARY KEY (`id`),
   -- กำหนด foreign key ให้ userId โดยอิงจาก users.id table
   FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
 );

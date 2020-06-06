@@ -1,10 +1,10 @@
 -- สร้าง user_logins table
 CREATE TABLE `user_logins` (
-  `id` int AUTO_INCREMENT,
+  `id` int AUTO_INCREMENT NOT NULL,
   `userId` int,
   `login_date` datetime,
   -- กำหนด primary key ให้กับ id
-  PRIMARY KEY (id),
+  PRIMARY KEY (`id`),
   -- กำหนด foreign key ให้ userId โดยอิงจาก users.id table
   FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
 );
