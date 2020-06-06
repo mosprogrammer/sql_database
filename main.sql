@@ -1,14 +1,14 @@
 --สร้างdb
-create DATABASE eba_homework; 
+create DATABASE eba; 
 --สร้างdb
 
 --ลองลบdb
--- drop DATABASE eba_homework; 
+-- drop DATABASE eba; 
 --ลองลบdb
 
---ใช้ ตาราง eba_homework
-use eba_homework;
---ใช้ ตาราง eba_homework
+--ใช้ ตาราง eba
+use eba;
+--ใช้ ตาราง eba
 
 -- สร้างตาราง users
 CREATE TABLE users(
@@ -28,8 +28,8 @@ show columns from users
 -- สร้างตาราง follows
 CREATE TABLE follows(
 follow_id INTEGER  NOT NULL AUTO_INCREMENT,
-following_id INTEGER ,
-follower_id INTEGER ,
+following_id INTEGER NOT NULL,
+follower_id INTEGER NOT NULL,
 PRIMARY KEY (follow_id),
 FOREIGN KEY (following_id) REFERENCES users(user_id) ,
 FOREIGN KEY (follower_id) REFERENCES users(user_id) 
@@ -43,7 +43,7 @@ show columns from follows
 -- สร้างตาราง posts
 CREATE TABLE posts(
 post_id INTEGER NOT NULL AUTO_INCREMENT,
-user_id INTEGER ,
+user_id INTEGER NOT NULL,
 status tinyint (1) ,
 message text,
 PRIMARY KEY (post_id),
@@ -58,8 +58,8 @@ show columns from posts
 -- สร้างตาราง comments
 CREATE TABLE comments(
 comment_id INTEGER NOT NULL AUTO_INCREMENT,
-user_id INTEGER ,
-post_id INTEGER,
+user_id INTEGER NOT NULL,
+post_id INTEGER NOT NULL,
 status tinyint (1) ,
 message text,
 PRIMARY KEY (comment_id),
@@ -75,8 +75,8 @@ show columns from comments
 -- สร้างตาราง claps
 CREATE TABLE claps(
 clap_id INTEGER NOT NULL AUTO_INCREMENT,
-user_id INTEGER ,
-post_id INTEGER,
+user_id INTEGER NOT NULL,
+post_id INTEGER NOT NULL,
 clap_count INTEGER ,
 PRIMARY KEY (clap_id),
 FOREIGN KEY (user_id) REFERENCES users(user_id) ,
@@ -91,9 +91,9 @@ show columns from claps
 -- สร้างตาราง feeds
 CREATE TABLE feeds(
 feed_id INTEGER NOT NULL AUTO_INCREMENT,
-user_id INTEGER ,
-post_id INTEGER,
-follow_id INTEGER ,
+user_id INTEGER NOT NULL,
+post_id INTEGER NOT NULL,
+follow_id INTEGER NOT NULL,
 PRIMARY KEY (feed_id),
 FOREIGN KEY (user_id) REFERENCES users(user_id) ,
 FOREIGN KEY (post_id) REFERENCES posts(post_id),
@@ -108,8 +108,8 @@ show columns from feeds
 -- สร้างตาราง hiddens
 CREATE TABLE hiddens(
 hidden_id INTEGER NOT NULL AUTO_INCREMENT,
-user_id INTEGER ,
-feed_id INTEGER,
+user_id INTEGER NOT NULL,
+feed_id INTEGER NOT NULL,
 PRIMARY KEY (hidden_id),
 FOREIGN KEY (user_id) REFERENCES users(user_id) ,
 FOREIGN KEY (feed_id) REFERENCES feeds(feed_id)
@@ -123,11 +123,10 @@ show columns from hiddens
 -- สร้างตาราง shares
 CREATE TABLE shares(
 share_id INTEGER NOT NULL AUTO_INCREMENT,
-user_id INTEGER ,
-feed_id INTEGER,
+share_count INTEGER,
+post_id INTEGER NOT NULL,
 PRIMARY KEY (share_id),
-FOREIGN KEY (user_id) REFERENCES users(user_id) ,
-FOREIGN KEY (feed_id) REFERENCES feeds(feed_id)
+FOREIGN KEY (post_id) REFERENCES posts(post_id)
 );
 -- สร้างตาราง shares
 
