@@ -6,8 +6,9 @@ USE eba_test;
 -- create table users
 
 CREATE TABLE users(
-id INTEGER  NOT NULL AUTO_INCREMENT,
-email VARCHAR (20),
+id INTEGER  NOT NULL AUTO_INCREMENT ,
+email VARCHAR (20) ,
+password VARCHAR(20) NOT NULL ,
 fullname VARCHAR(20) NOT NULL ,
 date_of_birth DATE ,
 createAt DATETIME ,
@@ -66,15 +67,6 @@ FOREIGN KEY (user_id) REFERENCES users(id) ,
 FOREIGN KEY (post_id) REFERENCES posts(id) 
 );
 
--- create table hidden_user
-CREATE TABLE hidden_user(
-id INTEGER NOT NULL AUTO_INCREMENT ,
-feeds_id INTEGER ,
-user_id INTEGER ,
-PRIMARY KEY (id) ,
-FOREIGN KEY (user_id) REFERENCES users(id) ,
-FOREIGN KEY (feeds_id) REFERENCES feeds(id) 
-);
 
 -- create table share_users
 CREATE TABLE share_users(
