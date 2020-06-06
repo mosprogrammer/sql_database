@@ -16,3 +16,7 @@ FROM `comments`
 WHERE `feedId` = 1;
 
 -- Count จำนวน Like ของ Post
+SELECT COUNT(`id`)
+AS NumberOfLikes
+FROM `likes`
+WHERE `feedId` = 5;
