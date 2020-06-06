@@ -10,3 +10,8 @@ FROM `feeds`
 WHERE `userId` = 20;
 
 -- Count จำนวน Comment ของ Post 
+SELECT COUNT(`id`)
+AS NumberOfComments
+FROM `comments`
+WHERE `feedId` = 1;
+
