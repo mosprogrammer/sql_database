@@ -1,0 +1,16 @@
+use toon;
+
+CREATE TABLE comments(
+    id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    postId integer,
+    userId integer,
+    comment varchar(255),
+    FOREIGN KEY(userId) REFERENCES users(id),
+    FOREIGN KEY(postId) REFERENCES posts(id)
+);
+
+INSERT INTO `comments` (`id`,`postId`,`userId`,`comment`) VALUES (1,30,19,"luctus felis purus ac tellus. Suspendisse sed dolor."),(2,31,13,"diam. Proin dolor."),(3,21,38,"posuere, enim nisl elementum purus,"),(4,18,11,"metus. Vivamus euismod urna. Nullam lobortis quam a felis"),(5,14,11,"et libero."),(6,9,1,"fermentum arcu. Vestibulum ante ipsum primis in faucibus orci"),(7,31,33,"Phasellus at augue id ante dictum cursus. Nunc mauris"),(8,7,50,"euismod in, dolor."),(9,14,7,"molestie"),(10,31,30,"purus mauris");
+INSERT INTO `comments` (`id`,`postId`,`userId`,`comment`) VALUES (11,9,48,"Cras interdum."),(12,44,5,"neque. Nullam ut nisi a odio semper cursus. Integer"),(13,9,37,"nulla magna, malesuada vel, convallis in,"),(14,46,31,"magnis dis parturient montes, nascetur ridiculus mus. Aenean eget"),(15,3,48,"sodales elit erat vitae"),(16,34,40,"tellus. Aenean egestas hendrerit neque. In ornare"),(17,42,41,"massa. Quisque porttitor eros nec tellus."),(18,5,28,"Aliquam"),(19,28,25,"interdum"),(20,34,47,"dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula");
+INSERT INTO `comments` (`id`,`postId`,`userId`,`comment`) VALUES (21,15,30,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur"),(22,18,27,"tristique senectus"),(23,39,19,"sem ut cursus luctus, ipsum leo elementum sem, vitae aliquam"),(24,44,16,"et, commodo at, libero. Morbi accumsan laoreet ipsum."),(25,39,33,"tristique aliquet. Phasellus fermentum convallis ligula. Donec luctus"),(26,41,20,"faucibus lectus, a sollicitudin orci sem eget"),(27,20,8,"sed consequat auctor, nunc nulla vulputate dui, nec tempus"),(28,40,9,"suscipit,"),(29,44,49,"Curabitur consequat, lectus sit amet luctus vulputate, nisi sem"),(30,40,17,"urna. Ut tincidunt vehicula risus. Nulla eget");
+INSERT INTO `comments` (`id`,`postId`,`userId`,`comment`) VALUES (31,18,37,"Nulla eu neque pellentesque massa lobortis"),(32,7,49,"nec luctus felis purus ac tellus. Suspendisse"),(33,36,32,"dolor, nonummy ac, feugiat non, lobortis quis, pede. Suspendisse"),(34,38,21,"Aenean sed pede"),(35,43,38,"nulla vulputate dui, nec tempus mauris erat eget ipsum. Suspendisse"),(36,35,21,"dolor sit amet, consectetuer adipiscing elit. Etiam laoreet, libero et"),(37,22,26,"aliquet."),(38,3,27,"sem semper erat,"),(39,45,34,"inceptos hymenaeos. Mauris ut quam vel sapien imperdiet ornare."),(40,1,21,"elit fermentum");
+INSERT INTO `comments` (`id`,`postId`,`userId`,`comment`) VALUES (41,43,43,"dolor dolor, tempus"),(42,3,14,"dui, in sodales elit erat vitae risus. Duis"),(43,22,25,"sed pede. Cum"),(44,33,24,"amet ante. Vivamus non lorem vitae odio sagittis semper."),(45,49,35,"nascetur ridiculus mus. Donec dignissim magna a tortor. Nunc commodo"),(46,39,16,"mattis ornare, lectus ante dictum mi, ac mattis velit justo"),(47,42,21,"blandit viverra. Donec tempus, lorem fringilla"),(48,27,30,"mauris elit, dictum eu, eleifend nec, malesuada ut,"),(49,43,14,"montes, nascetur ridiculus mus. Proin vel nisl."),(50,10,7,"nec orci. Donec nibh. Quisque nonummy ipsum non");

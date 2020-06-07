@@ -1,0 +1,19 @@
+USE toon;
+
+CREATE TABLE `posts` (
+  `id` integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `body` varchar(255),
+    `userId` integer NOT NULL,
+    `commentId` integer NOT NULL,
+    `clapId` integer,
+    `shareId` integer,
+    `hideId` integer,
+    `deleted` boolean,
+    FOREIGN KEY(userId) REFERENCES users(id)
+);
+
+INSERT INTO `posts` (`id`,`clapId`,`commentId`,`body`,`deleted`,`shareId`,`hideId`,`userId`) VALUES (1,18,13,"massa non ante bibendum ullamcorper.","0",21,45,38),(2,11,32,"ipsum cursus vestibulum. Mauris magna.","1",19,25,14),(3,42,45,"gravida non,","0",4,14,40),(4,40,12,"pharetra sed, hendrerit a, arcu. Sed","0",24,37,49),(5,40,2,"tincidunt nibh. Phasellus","0",27,21,16),(6,39,25,"Suspendisse dui. Fusce diam nunc, ullamcorper eu, euismod ac,","0",41,30,5),(7,19,43,"erat, in consectetuer ipsum nunc id enim.","1",4,35,35),(8,31,30,"velit. Pellentesque","1",15,10,16),(9,6,34,"faucibus orci luctus et ultrices posuere","0",15,47,37),(10,50,15,"at, nisi. Cum","0",30,21,34);
+INSERT INTO `posts` (`id`,`clapId`,`commentId`,`body`,`deleted`,`shareId`,`hideId`,`userId`) VALUES (11,32,2,"nisi dictum augue malesuada malesuada. Integer id magna et ipsum","1",47,40,13),(12,49,21,"nunc nulla vulputate","1",15,38,28),(13,15,42,"Donec sollicitudin adipiscing ligula. Aenean gravida nunc sed","1",22,16,40),(14,48,43,"dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices","1",16,22,48),(15,13,21,"ultricies ornare, elit elit fermentum risus, at fringilla purus mauris","0",6,38,35),(16,10,13,"commodo at, libero.","0",37,47,2),(17,41,30,"Integer aliquam","0",14,10,48),(18,38,36,"per inceptos","1",29,3,8),(19,14,22,"Fusce dolor quam, elementum at, egestas a,","0",13,46,46),(20,37,15,"litora torquent per conubia nostra, per inceptos hymenaeos.","0",23,16,50);
+INSERT INTO `posts` (`id`,`clapId`,`commentId`,`body`,`deleted`,`shareId`,`hideId`,`userId`) VALUES (21,36,45,"pede. Praesent","1",12,33,15),(22,46,31,"fringilla","0",24,23,19),(23,50,13,"sit amet ultricies sem magna nec","0",8,44,32),(24,45,9,"Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed,","1",21,18,10),(25,43,48,"congue turpis. In","0",15,42,23),(26,36,49,"vel quam dignissim pharetra. Nam ac","1",20,3,44),(27,35,33,"vulputate","1",42,9,28),(28,8,46,"Donec nibh enim, gravida sit","1",1,20,42),(29,31,19,"sollicitudin a, malesuada id, erat.","1",30,5,45),(30,2,42,"facilisis non,","0",8,13,6);
+INSERT INTO `posts` (`id`,`clapId`,`commentId`,`body`,`deleted`,`shareId`,`hideId`,`userId`) VALUES (31,14,21,"adipiscing lacus.","0",9,4,20),(32,41,21,"ligula consectetuer","0",47,35,8),(33,20,13,"nunc nulla vulputate dui, nec tempus","0",41,5,27),(34,26,6,"lorem, eget mollis lectus pede et risus.","0",7,12,22),(35,23,3,"id","0",41,30,36),(36,47,32,"et malesuada fames ac turpis egestas.","0",11,7,10),(37,37,27,"luctus, ipsum","1",14,12,34),(38,45,13,"sem mollis","1",23,8,28),(39,12,40,"sit amet risus. Donec egestas. Aliquam","0",26,7,46),(40,41,16,"Sed neque. Sed eget","1",12,12,17);
+INSERT INTO `posts` (`id`,`clapId`,`commentId`,`body`,`deleted`,`shareId`,`hideId`,`userId`) VALUES (41,27,26,"tortor at risus. Nunc ac sem","1",7,27,24),(42,34,46,"Sed nunc","0",16,47,42),(43,30,11,"interdum ligula eu enim.","0",34,3,4),(44,38,34,"rhoncus. Proin nisl sem, consequat nec, mollis vitae,","1",39,50,4),(45,39,43,"mattis velit justo","0",44,24,32),(46,33,34,"et netus et malesuada","0",12,33,27),(47,43,37,"Etiam gravida molestie arcu. Sed eu nibh vulputate mauris sagittis","0",6,10,18),(48,32,38,"senectus et netus","0",24,48,27),(49,9,32,"sem ut cursus luctus, ipsum","1",4,11,1),(50,2,16,"a odio semper cursus.","0",30,11,24);
