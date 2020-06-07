@@ -21,8 +21,8 @@ INSERT INTO `users` (
     )
 VALUES (
         1,
-        "Tad",
-        "Baird",
+        "Kane",
+        "Ji",
         "https://storage.googpeapis.gom/ebamobize_db/img778_png_",
         "2020-04-15 18:39:46"
     ),
