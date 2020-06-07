@@ -9,7 +9,9 @@ CREATE TABLE comments(
     PRIMARY KEY (comment_id),
     FOREIGN KEY (post_id) REFERENCES posts(post_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id),
-) AUTO_INCREMENT = 1;
+    CONSTRAINT FKComment_postID FOREIGN KEY (post_id) REFERENCES posts (post_id),
+    CONSTRAINT FKComment_userID FOREIGN KEY (user_id) REFERENCES users (user_id)
+);
 show columns
 from comments;
 -- Insert 50 comments row
@@ -89,13 +91,3 @@ VALUES (1, 43, 9, "Nulla eget metus eu"),
     (48, 23, 20, "est"),
     (49, 46, 43, "ut eros non enim"),
     (50, 39, 3, "dignissim tempor arcu. Vestibulum");
--- Display 50 comments row
-SELECT *
-FROM 'comments';
--- Update comments row : id = 1
-UPDATE 'comments'
-SET message = 'KaneJi Message'
-WHERE id = 1;
--- Delete comments row : id = 50
-DELETE FROM 'comments'
-WHERE id = '50';

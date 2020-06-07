@@ -7,8 +7,9 @@ CREATE TABLE friends (
     following boolean NOT NULL,
     PRIMARY KEY (friend_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id),
-) AUTO_INCREMENT = 1;
-Show Column
+    CONSTRAINT FKFriend_userID FOREIGN KEY (user_id) REFERENCES users (user_id)
+);
+Show Columns
 from friends;
 -- Insert 50 friends row
 INSERT INTO `friends` (`friend_id`, `user_id`, `following`)
@@ -62,13 +63,3 @@ VALUES (1, 42, true),
     (48, 26, true),
     (49, 16, false),
     (50, 46, false);
--- Display 50 friends row
-SELECT *
-FROM 'friends';
--- Update friend row : id = 1
-UPDATE 'friends'
-SET following = false
-WHERE id = 1;
--- Delete friend row : id = 50
-DELETE FROM 'friends'
-WHERE id = '50';

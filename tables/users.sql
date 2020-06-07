@@ -7,9 +7,9 @@ CREATE TABLE users (
     lastname varchar(15) NOT NULL,
     profileurl varchar(255),
     created_date datetime,
-    PRIMARY KEY (user_id),
-) AUTO_INCREMENT = 1;
-Show Column
+    PRIMARY KEY (user_id)
+);
+Show Columns
 from users;
 -- Insert 50 users row
 INSERT INTO `users` (
@@ -369,14 +369,3 @@ VALUES (
         "https://storage.googdeapis.vom/ebamobine_db/img728_png_",
         "2020-03-13 15:38:33"
     );
--- Display 50 users row
-SELECT *
-FROM 'users';
--- Update user row : id = 1
-UPDATE 'users'
-SET firstname = 'Kane',
-    lastname = 'Ji',
-WHERE id = 1;
--- Delete user row : id = 50
-DELETE FROM 'users'
-WHERE id = '50';

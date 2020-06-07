@@ -8,7 +8,9 @@ CREATE TABLE shares(
     PRIMARY KEY (share_id),
     FOREIGN KEY (post_id) REFERENCES posts(post_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id),
-) AUTO_INCREMENT = 1;
+    CONSTRAINT FKShare_postID FOREIGN KEY (post_id) REFERENCES posts (post_id),
+    CONSTRAINT FKShare_userID FOREIGN KEY (user_id) REFERENCES users (user_id)
+);
 show columns
 from shares;
 -- Insert 50 shares row
@@ -63,13 +65,3 @@ VALUES (1, 41, 38),
     (48, 24, 19),
     (49, 29, 14),
     (50, 49, 17);
--- Display 50 shares row
-SELECT *
-FROM 'shares';
--- Update shares row : id = 1
-UPDATE 'shares'
-SET user_id = 11
-WHERE id = 1;
--- Delete shares row : id = 50
-DELETE FROM 'shares'
-WHERE id = '50';

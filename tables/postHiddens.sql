@@ -1,20 +1,20 @@
 -- Use ebamobile_db Collection
 USE ebamobile_db;
--- Create Table and Show all Column : 'claps'
-CREATE TABLE claps(
-    clap_id INTEGER NOT NULL UNIQUE AUTO_INCREMENT,
+-- Create Table and Show all Column : 'post_hiddens'
+CREATE TABLE post_hiddens(
+    hidden_id INTEGER NOT NULL UNIQUE AUTO_INCREMENT,
     post_id INTEGER NOT NULL,
     user_id INTEGER NOT NULL,
-    PRIMARY KEY (clap_id),
+    PRIMARY KEY (hidden_id),
     FOREIGN KEY (post_id) REFERENCES posts(post_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id),
-    CONSTRAINT FKClap_postID FOREIGN KEY (post_id) REFERENCES posts (post_id),
-    CONSTRAINT FKClap_userID FOREIGN KEY (user_id) REFERENCES users (user_id)
+    CONSTRAINT FKHidden_postID FOREIGN KEY (post_id) REFERENCES posts (post_id),
+    CONSTRAINT FKHidden_userID FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 show columns
-from claps;
--- Insert 50 claps row
-INSERT INTO `claps` (`clap_id`, `post_id`, `user_id`)
+from post_hiddens;
+-- Insert 50 post_hiddens row
+INSERT INTO `post_hiddens` (`hidden_id`, `post_id`, `user_id`)
 VALUES (1, 28, 24),
     (2, 11, 15),
     (3, 12, 26),
