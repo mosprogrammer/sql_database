@@ -6,7 +6,7 @@ CREATE TABLE `user_logins` (
   -- กำหนด primary key ให้กับ id
   PRIMARY KEY (`id`),
   -- กำหนด foreign key ให้ userId โดยอิงจาก users.id table
-  FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
+  FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE
 );
 
 -- เพิ่มข้อมูล

@@ -8,7 +8,7 @@ CREATE TABLE `comments` (
   -- กำหนด primary key ให้กับ id
   PRIMARY KEY (`id`),
   -- กำหนด foreign key ให้ userId โดยอิงจาก users.id table
-  FOREIGN KEY (`userId`) REFERENCES `users` (`id`),
+  FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE SET NULL,
   -- กำหนด foreign key ให้ userId โดยอิงจาก feeds.id table
   FOREIGN KEY (`feedId`) REFERENCES `feeds` (`id`) ON DELETE CASCADE
 );

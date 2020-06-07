@@ -6,9 +6,9 @@ CREATE TABLE `relationships` (
   -- กำหนด primary key ให้กับ id
   PRIMARY KEY (`id`),
   -- กำหนด foreign key ให้ following_id โดยอิงจาก users.id table
-  FOREIGN KEY (`following_id`) REFERENCES `users` (`id`),
+  FOREIGN KEY (`following_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   -- กำหนด foreign key ให้ follower_id โดยอิงจาก users.id table
-  FOREIGN KEY (`follower_id`) REFERENCES `users` (`id`)
+  FOREIGN KEY (`follower_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 );
 
 -- เพิ่มข้อมูล
