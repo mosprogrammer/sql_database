@@ -1,4 +1,5 @@
 use mysql_workshop;
+
 CREATE TABLE posts (
   id INTEGER NOT NULL AUTO_INCREMENT,
   user_id INTEGER NOT NULL,
@@ -7,6 +8,7 @@ CREATE TABLE posts (
   PRIMARY KEY (id),
   FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
 INSERT INTO
   posts (id, user_id, messages, deleted)
 VALUES
