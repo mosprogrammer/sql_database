@@ -1,4 +1,4 @@
-### Databasename ###
+### Database Name ###
 ```
 ebamobile_db
 ```
