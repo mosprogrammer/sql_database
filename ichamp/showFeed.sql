@@ -27,26 +27,57 @@ ALTER TABLE
   `likes`
 ADD
   FOREIGN KEY (`feedId`) REFERENCES `feeds` (`id`) ON DELETE CASCADE;
--- set on delete cascade
 ALTER TABLE 
   `claps`
 ADD
   FOREIGN KEY (`feedId`) REFERENCES `feeds` (`id`) ON DELETE CASCADE;
--- set on delete cascade
 ALTER TABLE 
   `feed_shares`
 ADD
   FOREIGN KEY (`feedId`) REFERENCES `feeds` (`id`) ON DELETE CASCADE;
--- set feeds.id on delete cascade
 ALTER TABLE 
   `comments`
 ADD
   FOREIGN KEY (`feedId`) REFERENCES `feeds` (`id`) ON DELETE CASCADE;
+ALTER TABLE 
+  `addresses`
+ADD
+  FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
 -- set users.id on delete set null
 ALTER TABLE 
   `feeds`
 ADD
   FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE SET NULL;
+ALTER TABLE 
+  `likes`
+ADD
+  FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE SET NULL;
+ALTER TABLE 
+  `claps`
+ADD
+  FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE SET NULL;
+ALTER TABLE 
+  `user_logins`
+ADD
+  FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE SET NULL;
+ALTER TABLE 
+  `verification`
+ADD
+  FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE SET NULL;
+ALTER TABLE 
+  `comments`
+ADD
+  FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE SET NULL;
+ALTER TABLE 
+  `relationships`
+ADD
+  FOREIGN KEY (`following_id`) REFERENCES `users` (`id`) ON DELETE SET NULL;
+ALTER TABLE 
+  `relationships`
+ADD
+  FOREIGN KEY (`follower_id`) REFERENCES `users` (`id`) ON DELETE SET NULL;
+  
 -- delete feed
 DELETE FROM 
   `feeds` 
