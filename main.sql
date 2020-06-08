@@ -86,9 +86,19 @@ USE eba_database;
 -- INSERT INTO archivements (userID,createdAt,updatedAt) 
 -- VALUES (1,NOW(),NOW());
 
--- การบ้านครั้งที่ 3
-SELECT feeds.detail as FeedDetail,feeds.id as FeedId 
+
+-- การบ้าน SQL#3
+SELECT feeds.id as FeedID , feeds.detail as FeedDetail, feeds.userID as UserID,
+follows.followingId as followingID,
+COUNT(distinct shares.id) AS countShare,
+COUNT(distinct comments.id) AS countComments,
+COUNT(distinct claps.id) AS countClaps
 FROM feeds
-WHERE feeds.statusHide = false
-LEFT JOIN follows
-ON feeds.userID = follows.followingId;
+LEFT JOIN shares ON feeds.id = shares.feedID 
+LEFT JOIN comments ON feeds.id = comments.feedID 
+LEFT JOIN claps ON feeds.id = claps.feedID 
+LEFT JOIN follows ON follows.followingId = feeds.userID
+WHERE statusHide = false AND (follows.followingId = 1 OR follows.followingId = feeds.userID) GROUP BY feeds.id ;
+
+
+
