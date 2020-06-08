@@ -22,8 +22,8 @@ WHERE deleted = 0
 OR posts.user_id = (SELECT following_user_id FROM follow WHERE follow.following_user_id = user_id)
 AND posts.user_id = 1
 
--- hide post (ยังใช้งานไม่ได้ มีคำถามจะถาม)
-AND posts.user_id != (SELECT user_id FROM hidden_users WHERE posts.user_id = hidden_users.user_id)
+-- hide post 
+AND NOT (id = (SELECT post_id FROM hidden_users WHERE hidden_users.post_id = posts.id AND user_id = posts.user_id))
 
 ;
   
