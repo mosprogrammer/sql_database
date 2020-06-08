@@ -10,13 +10,14 @@ USE eba_database;
 
 
 -- การบ้านครั้งที่ 3
-SELECT DISTINCT feeds.detail as Detail, feeds.id as FeedId, feeds.userID as FeedUserId,
+SELECT  feeds.detail as Detail, feeds.id as FeedId
 FROM feeds
-INNER JOIN follows
-ON feeds.userID = follows.followingId
-OR feeds.userID = 1
-LEFT JOIN claps
-ON feeds.id = claps.feedID
+JOIN follows
+ON feeds.userID = follows.followingId;
+-- LEFT JOIN claps
+-- ON feeds.id = claps.feedID
+
+
 
 
 -- SELECT *,
@@ -97,10 +98,13 @@ ON feeds.id = claps.feedID
 -- INSERT INTO follows (followerId,followingId,userID)
 -- VALUES (null,5,1);
 
--- INSERT INTO claps (userID,feedID,createAt,updateAt)
--- VALUES (1,1,NOW(),NOW());
+-- INSERT INTO follows (followerId,followingId,userID)
+-- VALUES (1,1,2);
 
 -- UPDATE 
--- UPDATE feeds
--- SET statusHide = true, updateAt = NOW()
--- WHERE userID = 1 && feeds.id = 2; 
+-- UPDATE follows
+-- SET followerId = 2
+-- WHERE userID = 1 && follows.id = 1; 
+
+
+-- SELECT * FROM feeds where userID = 2 AND feeds.id = 1;
