@@ -5,8 +5,8 @@ CREATE TABLE follows (
     id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
     followerId integer,
     followingId integer,
-    userID integer  NOT NULL,
-    FOREIGN KEY (userID) REFERENCES users(id)
+    FOREIGN KEY (followerId) REFERENCES users(id),
+    FOREIGN KEY (followingId) REFERENCES users(id)
 );
 
 

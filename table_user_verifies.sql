@@ -3,7 +3,7 @@ USE eba_database;
 -- สร้าง table user_verifies 
 CREATE TABLE user_verifies (
     id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    token varchar(20) NOT NULL,
+    token varchar(150) NOT NULL,
     tokenExpire datetime,
     status boolean NOT NULL DEFAULT  0,
     verifyDate datetime,

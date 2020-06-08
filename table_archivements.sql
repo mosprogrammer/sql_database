@@ -5,7 +5,7 @@ CREATE TABLE archivements (
     id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
     userID integer  NOT NULL,
     createdAt datetime,
-    updateAt datetime,
+    updatedAt datetime,
     FOREIGN KEY (userID) REFERENCES users(id)
 );
 
