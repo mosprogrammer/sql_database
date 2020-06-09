@@ -84,8 +84,6 @@ WHERE hide.feedId IS NULL
 AND (follows.followingId = 1 OR follows.followingId = feeds.userId)
 GROUP BY feeds.feedId;
 
-SHOW COLUMNS FROM feeds;
-
 -- update ค่าในตาราง claps ให้เพิ่มทีละ 1
 UPDATE claps
 SET clap_total = clap_total + 1
