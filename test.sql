@@ -37,51 +37,54 @@ use eba_test;
 --   postId INTEGER NOT NULL AUTO_INCREMENT,
 --   message VARCHAR(255),
 --   userId INTEGER NOT NULL,
+--   createAt DATETIME,
+--   updateAt DATETIME,
+--   status BOOLEAN DEFAULT false,
 --   PRIMARY KEY (postId),
 --   FOREIGN KEY (userId) REFERENCES users(userId)
 -- );
 
--- INSERT INTO `posts` (`postId`, `message`, `userId`) VALUES
--- (NULL, 'quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto', 1),
--- (NULL, 'est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla', 1),
--- (NULL, 'iusto', 2),
--- (NULL, 'ullam et saepe reiciendis voluptatem adipisci sit amet autem assumenda provident rerum culpa quis hic commodi nesciunt rem tenetur doloremque ipsam iure quis sunt voluptatem rerum illo velit', 2),
--- (NULL, 'ut aspernatur corporis harum nihil quis provident sequi mollitia nobis aliquid molestiae perspiciatis et ea nemo ab reprehenderit accusantium quas voluptate dolores velit et doloremque molestiae', 3),
--- (NULL, 'dolore placeat quibusdam ea quo vitae magni quis enim qui quis quo nemo aut saepe quidem repellat excepturi ut quia sunt ut sequi eos ea sed quas', 3),
--- (NULL, 'dignissimos aperiam dolorem qui eum facilis quibusdam animi sint suscipit qui sint possimus cum', 4),
--- (NULL, 'consectetur animi nesciunt iure dolore enim quia ad veniam autem ut quam aut nobis et est aut quod aut provident voluptas autem voluptas',4),
--- (NULL, 'quo et expedita modi cum officia vel magni doloribus qui repudiandae vero nisi sit quos veniam quod sed accusamus veritatis error', 5),
--- (NULL, 'repudiandae veniam quaerat sunt sed alias aut fugiat sit autem sed est voluptatem omnis possimus esse voluptatibus quis est aut tenetur dolor neque', 5),
--- (NULL,	'et ea vero quia laudantium autem	delectus reiciendis molestiae occaecati non minima eveniet qui voluptatibus', 6),
--- (NULL,	'in quibusdam tempore odit est dolorem	itaque id aut magnam praesentium quia et ea odit et ea voluptas', 6),
--- (NULL,	'dolorum ut in voluptas mollitia et saepe quo animi', 7),
--- (NULL,	'voluptatem eligendi optio	fuga et accusamus dolorum perferendis illo', 7),
--- (NULL,	'eveniet quod temporibus	reprehenderit quos placeat velit minima officia dolores impedit', 8),
--- (NULL,	'sint suscipit perspiciatis velit dolorum rerum ipsa laboriosam odio	suscipit nam nisi quo aperiam aut asperiores eos fugit maiores voluptatibus quia voluptatem quis', 8),
--- (NULL,	'fugit voluptas sed molestias voluptatem provident	eos voluptas et aut odit natus earum aspernatur', 9),
--- (NULL,	'voluptate et itaque vero tempora molestiae	eveniet quo quis laborum totam consequatur non dolor ut et est repudiandae est voluptatem vel debitis et magnam', 9),
--- (NULL,	'adipisci placeat illum aut reiciendis qui	illum quis cupiditate provident sit magnam ea sed', 10),
--- (NULL,	'doloribus ad provident suscipit at	qui consequuntur ducimus possimus quisquam amet similique', 10),
--- (NULL,	'asperiores ea ipsam voluptatibus modi minima quia sint	repellat aliquid praesentium dolorem quo sed totam minus', 11),
--- (NULL,	'dolor sint quo a velit explicabo quia nam	eos qui et ipsum ipsam suscipit aut sed omnis non odio expedita earum', 11),
--- (NULL,	'maxime id vitae nihil numquam	veritatis unde neque eligendi quae quod architecto quo neque vitae', 12),
--- (NULL,	'autem hic labore sunt dolores incidunt	enim et ex nulla omnis voluptas quia qui voluptatem', 12 ),
--- (NULL,	'rem alias distinctio quo quis	ullam consequatur ut omnis quis sit vel consequuntur ipsa', 13),
--- (NULL,	'est et quae odit qui non	similique esse doloribus nihil accusamus omnis dolorem fuga consequuntur', 13),
--- (NULL,	'quasi id et eos tenetur aut quo autem	eum sed dolores ipsam sint possimus debitis occaecati debitis qui qui et ut placeat enim earum aut', 14),
--- (NULL,	'delectus ullam et corporis nulla voluptas sequi	non et quaerat ex quae ad maiores maiores recusandae', 14),
--- (NULL,	'iusto eius quod necessitatibus culpa ea	odit magnam ut saepe sed non qui tempora atque nihil', 15),
--- (NULL,	'a quo magni similique perferendis	alias dolor cumque impedit blanditiis non eveniet odio maxime blanditiis amet eius quis tempora quia autem rem a provident perspiciatis quia', 15),
--- (NULL,	'ullam ut quidem id aut vel consequuntur	debitis eius sed quibusdam non quis consectetur vitae impedit ut qui consequatur', 16),
--- (NULL,	'doloremque illum aliquid sunt	deserunt eos nobis asperiores et hic est debitis repellat molestiae optio nihil ratione ut', 16),
--- (NULL,	'qui explicabo molestiae dolorem	rerum ut et numquam laborum odit est sit id qui sint in quasi tenetur tempore aperiam et quaerat qui', 17),
--- (NULL,	'magnam ut rerum iure	ea velit perferendis earum ut voluptatem voluptate itaque iusto totam pariatur in nemo voluptatem voluptatem autem', 17),
--- (NULL,	'id nihil consequatur molestias animi provident	nisi error delectus possimus ut eligendi vitae placeat eos harum cupiditate', 18),
--- (NULL,	'fuga nam accusamus voluptas reiciendis itaque	ad mollitia et omnis minus architecto odit voluptas doloremque maxime aut non ipsa qui alias veniam', 18),
--- (NULL,	'provident vel ut sit ratione est	debitis et eaque non officia sed nesciunt pariatur vel voluptatem iste vero et ea numquam', 19),
--- (NULL,	'explicabo et eos deleniti nostrum ab id repellendus	animi esse sit aut sit nesciunt assumenda eum voluptas quia voluptatibus', 19),
--- (NULL,	'eos dolorem iste accusantium est eaque quam	corporis rerum ducimus vel eum accusantium maxime aspernatur a porro possimus iste', 20),
--- (NULL,	'enim quo cumque	ut voluptatum aliquid illo tenetur nemo sequi quo facilis ipsum rem optio mollitia quas voluptatem eum voluptas', 20);
+-- INSERT INTO `posts` (`postId`, `message`, `userId`, `createAt`, `updateAt`) VALUES
+-- (NULL, 'quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto', 1,NOW(),NOW()),
+-- (NULL, 'est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla', 1,NOW(),NOW()),
+-- (NULL, 'iusto', 2,NOW(),NOW()),
+-- (NULL, 'ullam et saepe reiciendis voluptatem adipisci sit amet autem assumenda provident rerum culpa quis hic commodi nesciunt rem tenetur doloremque ipsam iure quis sunt voluptatem rerum illo velit', 2,NOW(),NOW()),
+-- (NULL, 'ut aspernatur corporis harum nihil quis provident sequi mollitia nobis aliquid molestiae perspiciatis et ea nemo ab reprehenderit accusantium quas voluptate dolores velit et doloremque molestiae', 3,NOW(),NOW()),
+-- (NULL, 'dolore placeat quibusdam ea quo vitae magni quis enim qui quis quo nemo aut saepe quidem repellat excepturi ut quia sunt ut sequi eos ea sed quas', 3,NOW(),NOW()),
+-- (NULL, 'dignissimos aperiam dolorem qui eum facilis quibusdam animi sint suscipit qui sint possimus cum', 4,NOW(),NOW()),
+-- (NULL, 'consectetur animi nesciunt iure dolore enim quia ad veniam autem ut quam aut nobis et est aut quod aut provident voluptas autem voluptas',4,NOW(),NOW()),
+-- (NULL, 'quo et expedita modi cum officia vel magni doloribus qui repudiandae vero nisi sit quos veniam quod sed accusamus veritatis error', 5,NOW(),NOW()),
+-- (NULL, 'repudiandae veniam quaerat sunt sed alias aut fugiat sit autem sed est voluptatem omnis possimus esse voluptatibus quis est aut tenetur dolor neque', 5,NOW(),NOW()),
+-- (NULL,	'et ea vero quia laudantium autem	delectus reiciendis molestiae occaecati non minima eveniet qui voluptatibus', 6,NOW(),NOW()),
+-- (NULL,	'in quibusdam tempore odit est dolorem	itaque id aut magnam praesentium quia et ea odit et ea voluptas', 6,NOW(),NOW()),
+-- (NULL,	'dolorum ut in voluptas mollitia et saepe quo animi', 7,NOW(),NOW()),
+-- (NULL,	'voluptatem eligendi optio	fuga et accusamus dolorum perferendis illo', 7,NOW(),NOW()),
+-- (NULL,	'eveniet quod temporibus	reprehenderit quos placeat velit minima officia dolores impedit', 8,NOW(),NOW()),
+-- (NULL,	'sint suscipit perspiciatis velit dolorum rerum ipsa laboriosam odio	suscipit nam nisi quo aperiam aut asperiores eos fugit maiores voluptatibus quia voluptatem quis', 8,NOW(),NOW()),
+-- (NULL,	'fugit voluptas sed molestias voluptatem provident	eos voluptas et aut odit natus earum aspernatur', 9,NOW(),NOW()),
+-- (NULL,	'voluptate et itaque vero tempora molestiae	eveniet quo quis laborum totam consequatur non dolor ut et est repudiandae est voluptatem vel debitis et magnam', 9,NOW(),NOW()),
+-- (NULL,	'adipisci placeat illum aut reiciendis qui	illum quis cupiditate provident sit magnam ea sed', 10,NOW(),NOW()),
+-- (NULL,	'doloribus ad provident suscipit at	qui consequuntur ducimus possimus quisquam amet similique', 10,NOW(),NOW()),
+-- (NULL,	'asperiores ea ipsam voluptatibus modi minima quia sint	repellat aliquid praesentium dolorem quo sed totam minus', 11,NOW(),NOW()),
+-- (NULL,	'dolor sint quo a velit explicabo quia nam	eos qui et ipsum ipsam suscipit aut sed omnis non odio expedita earum', 11,NOW(),NOW()),
+-- (NULL,	'maxime id vitae nihil numquam	veritatis unde neque eligendi quae quod architecto quo neque vitae', 12,NOW(),NOW()),
+-- (NULL,	'autem hic labore sunt dolores incidunt	enim et ex nulla omnis voluptas quia qui voluptatem', 12,NOW(),NOW()),
+-- (NULL,	'rem alias distinctio quo quis	ullam consequatur ut omnis quis sit vel consequuntur ipsa', 13,NOW(),NOW()),
+-- (NULL,	'est et quae odit qui non	similique esse doloribus nihil accusamus omnis dolorem fuga consequuntur', 13,NOW(),NOW()),
+-- (NULL,	'quasi id et eos tenetur aut quo autem	eum sed dolores ipsam sint possimus debitis occaecati debitis qui qui et ut placeat enim earum aut', 14,NOW(),NOW()),
+-- (NULL,	'delectus ullam et corporis nulla voluptas sequi	non et quaerat ex quae ad maiores maiores recusandae', 14,NOW(),NOW()),
+-- (NULL,	'iusto eius quod necessitatibus culpa ea	odit magnam ut saepe sed non qui tempora atque nihil', 15,NOW(),NOW()),
+-- (NULL,	'a quo magni similique perferendis	alias dolor cumque impedit blanditiis non eveniet odio maxime blanditiis amet eius quis tempora quia autem rem a provident perspiciatis quia', 15,NOW(),NOW()),
+-- (NULL,	'ullam ut quidem id aut vel consequuntur	debitis eius sed quibusdam non quis consectetur vitae impedit ut qui consequatur', 16,NOW(),NOW()),
+-- (NULL,	'doloremque illum aliquid sunt	deserunt eos nobis asperiores et hic est debitis repellat molestiae optio nihil ratione ut', 16,NOW(),NOW()),
+-- (NULL,	'qui explicabo molestiae dolorem	rerum ut et numquam laborum odit est sit id qui sint in quasi tenetur tempore aperiam et quaerat qui', 17,NOW(),NOW()),
+-- (NULL,	'magnam ut rerum iure	ea velit perferendis earum ut voluptatem voluptate itaque iusto totam pariatur in nemo voluptatem voluptatem autem', 17,NOW(),NOW()),
+-- (NULL,	'id nihil consequatur molestias animi provident	nisi error delectus possimus ut eligendi vitae placeat eos harum cupiditate', 18,NOW(),NOW()),
+-- (NULL,	'fuga nam accusamus voluptas reiciendis itaque	ad mollitia et omnis minus architecto odit voluptas doloremque maxime aut non ipsa qui alias veniam', 18,NOW(),NOW()),
+-- (NULL,	'provident vel ut sit ratione est	debitis et eaque non officia sed nesciunt pariatur vel voluptatem iste vero et ea numquam', 19,NOW(),NOW()),
+-- (NULL,	'explicabo et eos deleniti nostrum ab id repellendus	animi esse sit aut sit nesciunt assumenda eum voluptas quia voluptatibus', 19,NOW(),NOW()),
+-- (NULL,	'eos dolorem iste accusantium est eaque quam	corporis rerum ducimus vel eum accusantium maxime aspernatur a porro possimus iste', 20,NOW(),NOW()),
+-- (NULL,	'enim quo cumque	ut voluptatum aliquid illo tenetur nemo sequi quo facilis ipsum rem optio mollitia quas voluptatem eum voluptas', 20,NOW(),NOW());
 
 -- DROP TABLE follows;
 
@@ -96,17 +99,35 @@ use eba_test;
 --   FOREIGN KEY (userId) REFERENCES users(userId)
 -- );
 
--- INSERT INTO `follows`(`followId`, `followingId`, `followerId`, `userId`) VALUES (NULL,2,3,1), (NULL,1,3,2), (NULL,2,1,3);
+-- INSERT INTO `follows`(`followId`, `followingId`, `followerId`, `userId`) VALUES 
+-- (NULL,2,2,1), 
+-- (NULL,3,10,2), 
+-- (NULL,4,9,3), 
+-- (NULL,5,8,4), 
+-- (NULL,6,7,5), 
+-- (NULL,7,6,6),
+-- (NULL,8,5,7), 
+-- (NULL,9,4,8), 
+-- (NULL,10,3,9), 
+-- (NULL,1,1,10), 
+-- (NULL,11,12,13), 
+-- (NULL,12,13,11),
+-- (NULL,13,14,15), 
+-- (NULL,14,15,16), 
+-- (NULL,15,16,17), 
+-- (NULL,16,17,18), 
+-- (NULL,17,18,19), 
+-- (NULL,18,19,12);
 
 -- ดึง post
-SELECT DISTINCT
-posts.postId, posts.message AS postContent,
-posts.userId, users.firstname, users.lastname,
-COUNT(DISTINCT postId) AS totalPost
-FROM posts
-RIGHT JOIN users ON posts.userId = users.userId
--- LEFT JOIN follows ON follows.followId = follows.followId 
-WHERE users.userId;
+-- SELECT DISTINCT
+-- posts.postId, posts.message AS postContent,
+-- posts.userId, users.firstname, users.lastname,
+-- COUNT(DISTINCT postId) AS totalPost
+-- FROM posts
+-- RIGHT JOIN users ON posts.userId = users.userId
+-- -- LEFT JOIN follows ON follows.followId = follows.followId 
+-- WHERE users.userId;
 
 -- LEFT JOIN 
 -- LEFT JOIN users ON follows.userId = users.userId WHERE users.userId = 1;

@@ -100,3 +100,40 @@ SELECT posts.postId, posts.userId, posts.message,
 FROM claps WHERE claps.postId = posts.postId) AS clap_total,
 (SELECT COUNT(DISTINCT postId) FROM comments WHERE comments.postId = posts.postId) AS comments_total,
 (SELECT COUNT(DISTINCT postId) FROM shares WHERE shares.postId = posts.postId) AS shares_total FROM posts;
+
+
+
+-- List Post ในหน้า Feed ออกมาแสดง
+-- LIMIT 5 โดยกำหนดไว้ที่ 5 Post ต่อหน้า
+-- แสดงเฉพาะ Post ของเรา และของเพื่อนที่เรา Follow อยู่เท่านั้น
+-- แสดงจำนวนการ Clap Comment และ Share ใน Post นั้นด้วย
+-- สร้าง Post ได้
+-- ลบ Post ได้ โดยที่ ถ้าเป็นเพื่อน กดลบ Post จะเป็นการซ่อนเอาไว้ แต่ถ้าหากเจ้าของ กดลบ Post จะเป็นการลบ Post นั้นไปเลย
+-- กด Clap ได้
+-- ทำการ Comment ได้
+-- สามารถ Share Post ของเพื่อน มายัง Feed ของเราได้ และเพื่อนที่กด Follow เราอยู่ก็จะเห็น Post ที่เรา Share
+-- ต้องการ ER Diagram และ DB Diagram เพื่อให้เข้าใจความสัมพันธ์ของข้อมูลด้วย
+
+
+
+-- SELECT column_name(s)
+-- FROM table1
+-- LEFT JOIN table2
+-- ON table1.column_name = table2.column_name;
+
+
+-- SELECT column_name(s)
+-- FROM table_name
+-- WHERE condition
+-- LIMIT number
+-- OFFSET number;
+
+-- SELECT column1, column2, ...
+-- FROM table_name
+-- ORDER BY column1, column2, ... ASC|DESC;
+
+
+
+
+
+-- //// เลือกแสดง feeds เฉพาะคนที่เรากด Following
