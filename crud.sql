@@ -50,19 +50,19 @@ use eba;
 -- ตารางแสดงcomment ของ userId 1, 2, 5
 -- ในตาราง feeds ดึง post มาแค่ id 1,2,3 ซึ่ง post ทั้งหมดเป็นของ userId = 1 จึงแสดงค่าออกมาเป็น คนที่ติดตาม comment post ของ UserId 1
 -- ตาราง hide userId 1 กดซ่อน post user 5,6
--- SELECT follows.followId AS IdFollow,
--- feeds.feedId AS IdFeeds, 
--- posts.postId, posts.message AS postContent, 
--- comments.message AS Comment,
--- COUNT(DISTINCT shares.shareId) AS count_share
--- FROM feeds
--- LEFT JOIN posts ON feeds.postId = posts.postId 
--- LEFT JOIN shares ON posts.postId = shares.postId 
--- LEFT JOIN comments ON posts.postId = comments.postId 
--- LEFT JOIN claps ON posts.postId = claps.postId 
--- LEFT JOIN follows ON feeds.followId = follows.followId 
--- LEFT JOIN hide ON feeds.feedId = hide.feedId 
--- WHERE hide.feedId IS NULL AND follows.followingId = 1 LIMIT 0, 10;
+SELECT follows.followId AS IdFollow,
+feeds.feedId AS IdFeeds, 
+posts.postId, posts.message AS postContent, 
+comments.message AS Comment,
+COUNT(DISTINCT shares.shareId) AS count_share
+FROM feeds
+LEFT JOIN posts ON feeds.postId = posts.postId 
+LEFT JOIN shares ON posts.postId = shares.postId 
+LEFT JOIN comments ON posts.postId = comments.postId 
+LEFT JOIN claps ON posts.postId = claps.postId 
+LEFT JOIN follows ON feeds.followId = follows.followId 
+LEFT JOIN hide ON feeds.feedId = hide.feedId 
+WHERE hide.feedId IS NULL AND follows.followingId = 1 LIMIT 0, 10;
 
 -- ALTER TABLE feeds
 -- ADD COLUMN userId INTEGER NOT NULL;
