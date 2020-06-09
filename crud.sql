@@ -74,7 +74,7 @@ ADD COLUMN share_total INTEGER NOT NULL;
 
 -- นับจำนวน clap, comment และ share ของ post
 SELECT posts.postId, posts.userId, posts.message,
-(SELECT COUNT(postId)
+(SELECT COUNT(DISTINCT postId)
 FROM claps WHERE claps.postId = posts.postId) AS clap_total,
-(SELECT COUNT(postId) FROM comments WHERE comments.postId = posts.postId) AS comments_total,
-(SELECT COUNT(postId) FROM shares WHERE shares.postId = posts.postId) AS shares_total FROM posts;
+(SELECT COUNT(DISTINCT postId) FROM comments WHERE comments.postId = posts.postId) AS comments_total,
+(SELECT COUNT(DISTINCT postId) FROM shares WHERE shares.postId = posts.postId) AS shares_total FROM posts;
