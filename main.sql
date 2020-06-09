@@ -7,6 +7,10 @@
 
 USE eba_database;
 
+-- set AUTO_INCREMENT เริ่มต้น
+-- ALTER TABLE claps AUTO_INCREMENT = 1;
+
+-- DROP TABLE shares; 
 
 -- การบ้านครั้งที่ 3
 -- SELECT  feeds.detail as Detail, feeds.id as FeedId
@@ -18,19 +22,19 @@ USE eba_database;
 
 -- เพิ่ม users
 -- INSERT INTO users (email,password,firstname,lastname,address,profileImage,archivementID,birthdate,createdAt,updateAt) 
--- VALUES ("max01@gmail.com","12345","Max01", "Max01","Address-001","max.png",1,NOW(),NOW(),NOW());
+-- VALUES ("max06@gmail.com","12345","Max06", "Max06","Address-006","max.png",1,NOW(),NOW(),NOW());
 -- INSERT INTO users (email,password,firstname,lastname,address,profileImage,archivementID,birthdate,createdAt,updateAt) 
--- VALUES ("max02@gmail.com", 12345,"Max02", "Max02","Address-002","max.png",1,NOW(),NOW(),NOW());
+-- VALUES ("max07@gmail.com", 12345,"Max07", "Max07","Address-007","max.png",1,NOW(),NOW(),NOW());
 -- INSERT INTO users (email,password,firstname,lastname,address,profileImage,archivementID,birthdate,createdAt,updateAt) 
--- VALUES ("max03@gmail.com", 12345,"Max03", "Max03","Address-003","max.png",1,NOW(),NOW(),NOW());
+-- VALUES ("max08@gmail.com", 12345,"Max08", "Max08","Address-008","max.png",1,NOW(),NOW(),NOW());
 -- INSERT INTO users (email,password,firstname,lastname,address,profileImage,archivementID,birthdate,createdAt,updateAt) 
--- VALUES ("max04@gmail.com", 12345,"Max04", "Max04","Address-004","max.png",1,NOW(),NOW(),NOW());
+-- VALUES ("max09@gmail.com", 12345,"Max09", "Max09","Address-009","max.png",1,NOW(),NOW(),NOW());
 -- INSERT INTO users (email,password,firstname,lastname,address,profileImage,archivementID,birthdate,createdAt,updateAt) 
--- VALUES ("max05@gmail.com", 12345,"Max05", "Max05","Address-005","max.png",1,NOW(),NOW(),NOW());
+-- VALUES ("max10@gmail.com", 12345,"Max10", "Max10","Address-010","max.png",1,NOW(),NOW(),NOW());
 
 -- ใส่ follows
 -- INSERT INTO follows (followerId,followingId)
--- VALUES (1,2);
+-- VALUES (1,6);
 -- INSERT INTO follows (followerId,followingId)
 -- VALUES (1,3);
 -- INSERT INTO follows (followerId,followingId)
@@ -42,22 +46,34 @@ USE eba_database;
 
 -- ใ่ส่ feed
 -- INSERT INTO feeds (detail,userID,createdAt,updateAt)
--- VALUES ("hello01",1,NOW(),NOW());
+-- VALUES ("A0001",1,NOW(),NOW());
 -- INSERT INTO feeds (detail,userID,createdAt,updateAt)
--- VALUES ("hello02",1,NOW(),NOW());
+-- VALUES ("B0001",2,NOW(),NOW());
 -- INSERT INTO feeds (detail,userID,createdAt,updateAt)
--- VALUES ("hello01",1,NOW(),NOW());
+-- VALUES ("C0001",3,NOW(),NOW());
 -- INSERT INTO feeds (detail,userID,createdAt,updateAt)
--- VALUES ("สวัสดี01",2,NOW(),NOW());
+-- VALUES ("D0001",4,NOW(),NOW());
 -- INSERT INTO feeds (detail,userID,createdAt,updateAt)
--- VALUES ("สวัสดี02",2,NOW(),NOW());
+-- VALUES ("E0001",5,NOW(),NOW());
 -- INSERT INTO feeds (detail,userID,createdAt,updateAt)
--- VALUES ("ของuser03",3,NOW(),NOW());
+-- VALUES ("F0001",6,NOW(),NOW());
+-- INSERT INTO feeds (detail,userID,createdAt,updateAt)
+-- VALUES ("G0001",7,NOW(),NOW());
+-- INSERT INTO feeds (detail,userID,createdAt,updateAt)
+-- VALUES ("H0001",8,NOW(),NOW());
+-- INSERT INTO feeds (detail,userID,createdAt,updateAt)
+-- VALUES ("I0001",9,NOW(),NOW());
+-- INSERT INTO feeds (detail,userID,createdAt,updateAt)
+-- VALUES ("J0001",10,NOW(),NOW());
+-- INSERT INTO feeds (detail,userID,createdAt,updateAt)
+-- VALUES ("A0002",1,NOW(),NOW());
+-- INSERT INTO feeds (detail,userID,createdAt,updateAt)
+-- VALUES ("B0002",2,NOW(),NOW());
 
 -- ซ่อน post
 -- UPDATE feeds
 -- SET statusHide = true
--- WHERE userID = 1 && feeds.id = 1; 
+-- WHERE userID = 1 && feeds.id = 11; 
 
 
 -- เพิ่ม clap
@@ -88,17 +104,72 @@ USE eba_database;
 
 
 -- การบ้าน SQL#3
-SELECT feeds.id as FeedID , feeds.detail as FeedDetail, feeds.userID as UserID,
-follows.followingId as followingID,
-COUNT(distinct shares.id) AS countShare,
-COUNT(distinct comments.id) AS countComments,
-COUNT(distinct claps.id) AS countClaps
+-- SELECT feeds.id as FeedID , feeds.detail as FeedDetail, feeds.userID as UserID,
+-- follows.followingId as followingID
+-- -- COUNT(distinct shares.id) AS countShare,
+-- -- COUNT(distinct comments.id) AS countComments,
+-- -- COUNT(distinct claps.id) AS countClaps
+-- FROM feeds
+-- LEFT JOIN shares ON feeds.id = shares.feedID 
+-- -- LEFT JOIN comments ON feeds.id = comments.feedID 
+-- -- LEFT JOIN claps ON feeds.id = claps.feedID 
+-- LEFT JOIN follows ON follows.followingId = feeds.userID
+-- WHERE statusHide = false AND (follows.followingId = 1 OR follows.followingId = feeds.userID) GROUP BY feeds.id;
+
+
+
+-- เพิ่ม column 
+-- ALTER TABLE feeds
+-- ADD statusShares boolean NOT NULL DEFAULT  0;
+
+
+ -- เพิ่ม clap
+-- INSERT INTO claps (userID,feedID,createdAt,updateAt) 
+-- VALUES (1,16,NOW(),NOW());
+-- INSERT INTO claps (userID,feedID,createdAt,updateAt) 
+-- VALUES (2,2,NOW(),NOW());
+-- INSERT INTO claps (userID,feedID,createdAt,updateAt) 
+-- VALUES (3,2,NOW(),NOW());
+
+-- เพิ่ม Comments
+-- INSERT INTO comments (detail,userID,feedID,createdAt,updateAt) 
+-- VALUES ("ว่าไงเพื่อน",1,1,NOW(),NOW());
+-- INSERT INTO comments (detail,userID,feedID,createdAt,updateAt) 
+-- VALUES ("ไปกินที่ไหนกันดี",1,1,NOW(),NOW());
+-- INSERT INTO comments (detail,userID,feedID,createdAt,updateAt) 
+-- VALUES ("เอาร้านที่มีเด็กป่ะละ",2,1,NOW(),NOW());
+-- INSERT INTO comments (detail,userID,feedID,createdAt,updateAt) 
+-- VALUES ("จัดดิว่ะ ขอเด็ดๆ",1,1,NOW(),NOW());
+
+-- เพิ่ม เพื่อน shares โพสของเรา
+-- INSERT INTO shares (userID,feedID,user_feedID,createdAt,updateAt) 
+-- VALUES (2,1,16,NOW(),NOW());
+-- INSERT INTO feeds (detail,userID,statusShares,createdAt,updateAt)
+-- VALUES (null,2,true,NOW(),NOW());
+
+
+-- ซ่อน post
+-- INSERT INTO hide_feeds (userID,feedID,createdAt,updateAt) 
+-- VALUES (2,1,NOW(),NOW());
+-- INSERT INTO hide_feeds (userID,feedID,createdAt,updateAt) 
+-- VALUES (2,15,NOW(),NOW());
+
+
+
+SELECT feeds.id as FeedID, 
+IF((SELECT shares.feedID FROM shares WHERE shares.user_feedID = feeds.id) 
+IS NULL,"-",(SELECT shares.feedID FROM shares WHERE shares.user_feedID = feeds.id)) as shareFromFeedID,
+IF(feeds.detail IS NULL,
+(SELECT feeds.detail FROM feeds WHERE feeds.id = shareFromFeedID)
+,feeds.detail) as FeedDetail,
+feeds.userID as FeedsUserID,
+COUNT(distinct claps.id) as countClaps,
+COUNT(distinct comments.id) as countComments,
+COUNT(distinct shares.feedID) as countShare
 FROM feeds
-LEFT JOIN shares ON feeds.id = shares.feedID 
-LEFT JOIN comments ON feeds.id = comments.feedID 
 LEFT JOIN claps ON feeds.id = claps.feedID 
+LEFT JOIN comments ON feeds.id = comments.feedID 
+LEFT JOIN shares  ON feeds.id = shares.feedID
 LEFT JOIN follows ON follows.followingId = feeds.userID
-WHERE statusHide = false AND (follows.followingId = 1 OR follows.followingId = feeds.userID) GROUP BY feeds.id ;
-
-
-
+LEFT JOIN hide_feeds ON feeds.id = hide_feeds.FeedID 
+WHERE  hide_feeds.FeedID IS NULL AND follows.followerId = 1 OR feeds.userID = 1  GROUP BY feeds.id LIMIT 5 OFFSET 0;
