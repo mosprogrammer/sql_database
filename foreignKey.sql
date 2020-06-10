@@ -1,0 +1,39 @@
+USE thailand;
+--
+--
+-- ALTER TABLE amphures ENGINE = InnoDB;
+-- ALTER TABLE provinces ENGINE = InnoDB;
+--
+--
+-- ALTER TABLE `amphures` DROP FOREIGN KEY province_id;
+--
+--
+-- ALTER TABLE `amphures`
+-- ADD FOREIGN KEY (province_id) REFERENCES provinces(id);
+-- SHOW COLUMNS
+-- FROM users;
+--
+--
+-- SHOW COLUMNS
+-- FROM amphures;
+-- INSERT INTO provinces
+-- VALUES(NULL, '99', 'ทวิน', 'Twin', 2);
+-- SELECT *
+-- FROM amphures
+-- WHERE amphures.province_id = (
+-- SELECT *
+-- FROM provinces
+-- ORDER BY name_th DESC
+-- LIMIT 10 OFFSET 10;
+-- )
+-- SELECT UNIQUE_CONSTRAINT_SCHEMA AS DB,
+--     TABLE_NAME,
+--     CONSTRAINT_NAME AS FOREIGN_KEY_NAME,
+--     UPDATE_RULE,
+--     DELETE_RULE,
+--     REFERENCED_TABLE_NAME
+-- FROM INFORMATION_SCHEMA.referential_constraints
+-- WHERE UNIQUE_CONSTRAINT_SCHEMA = "database_name";
+SHOW CREATE TABLE amphures;
+-- SHOW COLUMNS
+-- FROM amphures;

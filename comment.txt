@@ -1,0 +1,52 @@
+Eak
+- table users ขาด column password
+- Foreign Key ขาด option NOT NULL เช่น user_id ใน table ต่างๆ 
+
+Max Zero
+- table comment column detail ขนาดไม่ตรงกันกับ dbdiagram
+- table feed column detail ขนาดไม่ตรงกันกับ dbdiagram
+
+Do
+- table users ขาด column password
+- Foreign Key ขาด option NOT NULL เช่น user_id ใน table ต่างๆ 
+
+
+Bung
+- Foreign Key ขาด option NOT NULL เช่น user_id ใน table ต่างๆ 
+** การเก็บรูปใน database ไม่แนะนำให้เก็บเป็นข้อมูลรูปภาพแบบตรงๆ ในการใช้งานจริงๆ เราจะ upload ไปไว้ใน storage ต่างๆก่อน 
+เสร็จแล้วถึงจะนำ url หรือ path ที่ได้มาเก็บลงใน database
+
+Champ
+- ไม่ได้ใส่คำสั่ง Create Database และ Use Database
+- Foreign Key ขาด option NOT NULL เช่น user_id ใน table ต่างๆ 
+
+Kane
+- Foreign Key ขาด option NOT NULL เช่น user_id ใน table ต่างๆ 
+
+Fluke
+- Foreign Key ขาด option NOT NULL เช่น user_id ใน table ต่างๆ 
+- ขาด comment code
+- ชื่อ column ไม่ตรงกับใน dbdiagram
+
+Tuy
+- Foreign Key ขาด option NOT NULL เช่น user_id ใน table ต่างๆ 
+- ไม่ได้ Create Database
+
+Teem
+- Foreign Key ขาด option NOT NULL เช่น user_id ใน table ต่างๆ 
+
+Toon
+- Foreign Key ขาด option NOT NULL เช่น user_id ใน table ต่างๆ 
+- ไม่ได้ใส่ขนาดของ varchar
+
+Ked
+- Foreign Key ขาด option NOT NULL เช่น user_id ใน table ต่างๆ 
+
+Tang
+- Foreign Key ใส่ option ผิด ต้องเป็น NOT NULL เช่น user_id ใน table ต่างๆ 
+
+Tong
+- Foreign Key ขาด option NOT NULL เช่น user_id ใน table ต่างๆ 
+
+Teen
+- 
